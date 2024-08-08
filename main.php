@@ -47,14 +47,6 @@ $hasil = mysqli_fetch_array($query);
             <!-- End Content-->
         </div>
         <!-- End Container Sidebar & Content -->
-
-        <!-- Footer -->
-        <div class="container-fluid fixed-bottom">
-            <div class="card text-center border-0 bg-transparent py-2">
-                <i><b><center>Copyright Ilham Maulana 2024</center></b></i>
-            </div>
-            <!-- End Footer -->
-        </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
         <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields

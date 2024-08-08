@@ -38,11 +38,6 @@ if( $statusUpload == 0){
     $message = '<script>alert("'.$message.' Gambar tidak bisa diupload");
     window.location="../menu"</script>'; 
 }else{
-    $select = mysqli_query($conn, "SELECT * FROM tb_olahraga WHERE nama ='$nama'");
-    if(mysqli_num_rows($select) > 0) {
-        $message = '<script>alert("Nama menu yang dimasukkan telah ada");
-        window.location="../menu"</script>';
-    }else{
         if(move_uploaded_file($_FILES['foto']['tmp_name'],$target_file)){
             $query = mysqli_query($conn, "INSERT INTO tb_olahraga (foto,nama,exercise,kalori,frekuensi) 
     values ('". $kode_rand .$_FILES['foto']['name'] . "','$nama','$exercise','$kalori','$frekuensi')");
@@ -54,10 +49,9 @@ if( $statusUpload == 0){
         window.location="../menu"</script>';
     }
         }else{
-            $message = '<script>alert("Maaf, terjadi kesalahan file tia=dak dapat diupload");
+            $message = '<script>alert("Maaf, terjadi kesalahan file tidak dapat diupload");
         window.location="../menu"</script>';
         }
     }
-}
 }echo $message;
 ?>
