@@ -23,7 +23,7 @@
                         <li class="nav-item">
                             <a class="nav-link ps-2 <?php echo (isset($_GET['x']) && $_GET['x'] == 'menu') ? 'active link-light'
                                                         : 'link-dark'; ?>" href="menu">
-                                </i> Daftar Menu</a>
+                                </i> Upload Olahraga</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link ps-2 <?php echo (isset($_GET['x']) && $_GET['x'] == 'katmenu') ? 'active link-light'
