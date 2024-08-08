@@ -1,4 +1,4 @@
-    <link rel="shortcut icon" href="gambar/Logo_PLN.png">
+    <link rel="shortcut icon" href="gambar/giphy.webp">
             <?php
             session_start();
             if (isset($_GET['x']) && $_GET['x'] == 'home') {

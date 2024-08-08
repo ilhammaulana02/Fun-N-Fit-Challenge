@@ -4,8 +4,7 @@ $id = (isset($_POST['id'])) ? htmlentities($_POST['id']) : "";
 $name = (isset($_POST['nama'])) ? htmlentities($_POST['nama']) : "";
 $username = (isset($_POST['username'])) ? htmlentities($_POST['username']) : "";
 $level = (isset($_POST['level'])) ? htmlentities($_POST['level']) : "";
-$nohp = (isset($_POST['nohp'])) ? htmlentities($_POST['nohp']) : "";
-$alamat = (isset($_POST['alamat'])) ? htmlentities($_POST['alamat']) : "";
+$kesan = (isset($_POST['kesan'])) ? htmlentities($_POST['kesan']) : "";
 $password = md5('password');
 
 if(!empty($_POST['input_user_validate'])){
@@ -15,7 +14,7 @@ if(!empty($_POST['input_user_validate'])){
         window.location="../user"</script>';
     }else{
     $query = mysqli_query($conn, "UPDATE tb_user SET nama='$name',username='$username',
-    level='$level',nohp='$nohp',alamat='$alamat' WHERE id='$id'"); 
+    level='$level',kesan='$kesan' WHERE id='$id'"); 
     if($query) {
         $message = '<script>alert("Data Berhasil Di Update");
         window.location="../user"</script>';

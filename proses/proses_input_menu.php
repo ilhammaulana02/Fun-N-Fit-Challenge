@@ -1,10 +1,9 @@
 <?php
 include "connect.php";
-$nama_menu = (isset($_POST['nama_menu'])) ? htmlentities($_POST['nama_menu']) : "";
-$keterangan = (isset($_POST['keterangan'])) ? htmlentities($_POST['keterangan']) : "";
-$kat_menu = (isset($_POST['kat_menu'])) ? htmlentities($_POST['kat_menu']) : "";
-$harga = (isset($_POST['harga'])) ? htmlentities($_POST['harga']) : "";
-$stok = (isset($_POST['stok'])) ? htmlentities($_POST['stok']) : "";
+$nama = (isset($_POST['nama'])) ? htmlentities($_POST['nama']) : "";
+$exercise = (isset($_POST['exercise'])) ? htmlentities($_POST['exercise']) : "";
+$kalori = (isset($_POST['kalori'])) ? htmlentities($_POST['kalori']) : "";
+$frekuensi = (isset($_POST['frekuensi'])) ? htmlentities($_POST['frekuensi']) : "";
 
 $kode_rand = rand(10000,99999)."-";
 $target_dir = "../assets/img/".$kode_rand;
@@ -39,14 +38,14 @@ if( $statusUpload == 0){
     $message = '<script>alert("'.$message.' Gambar tidak bisa diupload");
     window.location="../menu"</script>'; 
 }else{
-    $select = mysqli_query($conn, "SELECT * FROM tb_daftar_menu WHERE nama_menu ='$nama_menu'");
+    $select = mysqli_query($conn, "SELECT * FROM tb_olahraga WHERE nama ='$nama'");
     if(mysqli_num_rows($select) > 0) {
         $message = '<script>alert("Nama menu yang dimasukkan telah ada");
         window.location="../menu"</script>';
     }else{
         if(move_uploaded_file($_FILES['foto']['tmp_name'],$target_file)){
-            $query = mysqli_query($conn, "INSERT INTO tb_daftar_menu (foto,nama_menu,keterangan,kategori,harga,stok) 
-    values ('". $kode_rand .$_FILES['foto']['name'] . "','$nama_menu','$keterangan','$kat_menu','$harga','$stok')");
+            $query = mysqli_query($conn, "INSERT INTO tb_olahraga (foto,nama,exercise,kalori,frekuensi) 
+    values ('". $kode_rand .$_FILES['foto']['name'] . "','$nama','$exercise','$kalori','$frekuensi')");
     if($query) {
         $message = '<script>alert("Data Berhasil Di Tambah");
         window.location="../menu"</script>';

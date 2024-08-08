@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-<link rel="shortcut icon" href="gambar/coffe.webp">
+<link rel="shortcut icon" href="gambar/giphy.webp">
 <div class="col-lg-3">
     <nav class="navbar navbar-expand-lg rounded mt-2" style="background-color: #F4CE14;">
         <div class="container-fluid">
@@ -25,31 +25,11 @@
                                                         : 'link-dark'; ?>" href="menu">
                                 </i> Upload Olahraga</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link ps-2 <?php echo (isset($_GET['x']) && $_GET['x'] == 'katmenu') ? 'active link-light'
-                                                        : 'link-dark'; ?>" href="katmenu">
-                                </i> Kategori Menu</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ps-2 <?php echo (isset($_GET['x']) && $_GET['x'] == 'order') ? 'active link-light'
-                                                        : 'link-dark'; ?>" href="order">
-                                </i> Order</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ps-2 <?php echo (isset($_GET['x']) && $_GET['x'] == 'customer') ? 'active link-light'
-                                                        : 'link-dark'; ?>" href="customer">
-                                </i> Customer</a>
-                        </li>
                         <?php if ($hasil['level'] == 1) { ?>
                         <li class="nav-item">
                             <a class="nav-link ps-2 <?php echo (isset($_GET['x']) && $_GET['x'] == 'user') ? 'active link-light'
                                                             : 'link-dark'; ?>" href="user">
                                 </i> User</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ps-2 <?php echo (isset($_GET['x']) && $_GET['x'] == 'report') ? 'active link-light'
-                                                            : 'link-dark'; ?>" href="report">
-                                Report</a>
                         </li>
                         <?php } ?>
                     </ul>

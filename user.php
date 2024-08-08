@@ -60,9 +60,7 @@ while ($record = mysqli_fetch_array($query)) {
                                                 required>
                                                 <option selected hidden value="">Pilih Level User </option>
                                                 <option value="1">Admin</option>
-                                                <option value="2">Operator</option>
-                                                <option value="3">User</option>
-                                                <option value="3">Guest</option>
+                                                <option value="2">Pegawai</option>
                                             </select>
                                             <label for="floatingInput">Level User</label>
                                             <div class="invalid-feedback">
@@ -89,7 +87,7 @@ while ($record = mysqli_fetch_array($query)) {
                                 </div>
                                 <div class="form-floating">
                                     <textarea class="form-control" id="" style="height: 100px;"
-                                        name="alamat"></textarea>
+                                        name="kesan"></textarea>
                                     <label for="floatingInput">Kesan/Pesan/Saran</label>
                                 </div>
                                 <div class="modal-footer">
@@ -149,7 +147,7 @@ while ($record = mysqli_fetch_array($query)) {
                                             <select disabled name="level" class="form-select"
                                                 aria-label="default select example" id="" required>
                                                 <?php
-                                                    $data = array("owner/admin", "kasir", "pelayan", "dapur");
+                                                    $data = array("owner/admin","user");
                                                     foreach ($data as $key => $value) {
                                                         if ($row['level'] == $key + 1) {
                                                             echo "<option selected value='$key'>$value</option>";
@@ -176,7 +174,7 @@ while ($record = mysqli_fetch_array($query)) {
 
                                 <div class="form-floating">
                                     <textarea disabled class="form-control" id="" style="height: 100px;"
-                                        name="alamat"><?php echo $row['alamat'] ?></textarea>
+                                        name="kesan"><?php echo $row['kesan'] ?></textarea>
                                     <label for="floatingInput">Kesan/Pesan/Saran</label>
                                 </div>
                                 <div class="modal-footer">
@@ -234,7 +232,7 @@ while ($record = mysqli_fetch_array($query)) {
                                             <select name="level" class="form-select" aria-label="default select example"
                                                 id="" required>
                                                 <?php
-                                                    $data = array("owner/admin", "kasir", "pelayan", "dapur");
+                                                    $data = array("admin","pegawai");
                                                     foreach ($data as $key => $value) {
                                                         if ($row['level'] == $key + 1) {
                                                             echo "<option selected value=" . ($key + 1) . ">$value</option>";
@@ -261,7 +259,7 @@ while ($record = mysqli_fetch_array($query)) {
 
                                 <div class="form-floating">
                                     <textarea class="form-control" id="" style="height: 100px;"
-                                        name="alamat"><?php echo $row['alamat'] ?></textarea>
+                                        name="kesan"><?php echo $row['kesan'] ?></textarea>
                                     <label for="floatingInput">Kesan/Pesan/Saran</label>
                                 </div>
                                 <div class="modal-footer">
@@ -382,11 +380,7 @@ while ($record = mysqli_fetch_array($query)) {
                                         if ($row['level'] == 1) {
                                             echo "Admin";
                                         } else if ($row['level'] == 2) {
-                                            echo "Kasir";
-                                        } else if ($row['level'] == 3) {
-                                            echo "Pelayan";
-                                        } else if ($row['level'] == 4) {
-                                            echo "Dapur";
+                                            echo "Pegawai";
                                         }
                                         ?></td>
                             <td><?php echo $row['nip'] ?></td>
